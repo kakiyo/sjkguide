@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta http-equiv="content-type" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link href="icon/favicon.png" rel="apple-touch-icon">
+    <link rel="icon" href="icon/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon/favicon.png" >
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="icon/favicon.png" >
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon/favicon.png" >
+    <link rel="apple-touch-icon-precomposed" href="icon/favicon.png" >
+
+
+    <title>新宿出口ガイド</title>
+    <!--<link rel="stylesheet" href="css/css.css">-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo18W8DGFYG0rpdqR5cPFN4wy-KVYjL74&libraries=geometry">
+    </script>
+
+</head>
+<body onload="initMap()">
+<div class="container">
+    <div class="row">
+    <div class="col-xs-6 col-sm-3" id="map_canvas" style="height: 35em;"></div>
+    </div>
+    <div class="row">
+    <div class="btn-group btn-group-justified">
+        <div class="col-lg-6">
+        <div class="btn-group">
+            <button onclick="geolocation()" id="locate" class="btn-primary">現在地</button>
+        </div>
+        <!--<input id="address"  class="searchBox" type="search" name="word" autocomplete="off" maxlength="256" placeholder="新宿駅近所" value="">-->
+
+            <div class="input-group">
+                <span class="input-group-btn">
+                <input type="text" id="address" class="form-control" placeholder="新宿駅近所">
+						<button id="search" class="btn-primary" onclick="ajaxSubmit()" type="button">
+							Go!
+						</button>
+                    <div class="btn-group">
+                        <button id="show" class="btn-primary" style="display: none">show</button>
+                    </div>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+        <!--<div class="btn-group">-->
+            <!--<button id="search" class="btn-primary" onclick="ajaxSubmit()">検索</button>-->
+        <!--</div>-->
+
+    </div>
+    </div>
+    <p>※E：エレベーター</p>
+    <p>※K：階段</p>
+
+</div>
+    <script src="js/initial.js">
+    </script>
+</body>
+</html>
